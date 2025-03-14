@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Lexend Deca", sans-serif;
+  }
+}
+
+@layer components {
+  /* Custom styles for the dual-range slider */
+  .slider {
+    position: relative;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+  }
+
+  .slider .progress {
+    position: absolute;
+    height: 100%;
+    background: #92278f;
+    border-radius: 2px;
+  }
+
+  .range-input {
+    position: relative;
+  }
+
+  .range-input input {
+    position: absolute;
+    top: -5px;
+    height: 5px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .range-input input[type="range"]::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #92278f;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .range-input input[type="range"]::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #92278f;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  /* Custom styles for the collapse dropdown */
+  .custom-collapse {
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  .custom-collapse.closed {
+    height: 0 !important;
+  }
+
+  /* Rotate arrow icon */
+  .custome-rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .transition-transform {
+    transition: transform 0.3s ease;
+  }
+
+  /* Filter section animation */
+  .filter-section {
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .filter-section.open {
+    transform: translateY(0);
+  }
+
+  /* Banner CSS */
+  #banner .swiper-pagination-bullet {
+    width: 7px !important;
+    height: 7px !important;
+    line-height: 20px !important;
+    color: #bbbbbb !important;
+    transition: all linear 0.3s;
+    text-align: center;
+  }
+
+  #banner .swiper-pagination-bullet-active {
+    background: #333333 !important;
+    width: 30px !important;
+    border-radius: 5px !important;
+  }
+
+  /* Featured Category CSS */
+  .swiper-pagination {
+    bottom: 0;
+  }
+  .featuredSwiper .swiper-button-next {
+    top: 10%;
+    right: 3%;
+  }
+
+  .featuredSwiper .swiper-button-prev {
+    top: 10%;
+    left: 90%;
+  }
+  .featuredSwiper .swiper-pagination-bullet {
+    width: 7px !important;
+    height: 7px !important;
+    text-align: center;
+    line-height: 20px;
+    transition: all linear 0.3s;
+    background: #666666 !important;
+  }
+  .featuredSwiper .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #333333 !important;
+    width: 30px !important;
+    border-radius: 5px !important;
+  }
+}
