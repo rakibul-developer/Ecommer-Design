@@ -5,8 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/easyzoom@2.5.2/css/easyzoom.css'>
+  <link rel="stylesheet" href="./style.css">
   <link href="./tailwind.css" rel="stylesheet" />
+  <style>
+    .pd_btn_active {
+      color: #92278F;
+      border-bottom: 2px solid #92278F;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,7 +24,49 @@
     <!-- Product Gellary -->
     <div class="container mx-auto py-6 px-3">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div class="col-span-6">Gellary</div>
+        <div class="col-span-6 flex gap-6">
+          <!-- Product Slider -->
+          <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/productslider.png" alt="Product Image" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/productslider.png" alt="Product Image" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/productslider.png" alt="Product Image" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/productslider.png" alt="Product Image" />
+              </div>
+            </div>
+          </div>
+          <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="easyzoom">
+                  <img src="./images/productslider.png" alt="Product Image" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="easyzoom">
+                  <img src="./images/productslider.png" alt="Product Image" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="easyzoom">
+                  <img src="./images/productslider.png" alt="Product Image" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="easyzoom">
+                  <img src="./images/productslider.png" alt="Product Image" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-span-6">
           <div class="flex flex-col gap-5">
             <h3 class="text-lg md:text-xl lg:text-2xl text-[#191A20] font-medium">
@@ -142,11 +193,188 @@
           </div>
         </div>
       </div>
+
+      <!-- Product Details Part Start -->
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="col-span-9">
+            <div class="flex flex-row gap-6">
+              <a class="text-sm text-[#292D32] py-4 pd_btn_active" href="#specification">Specification</a>
+              <a class="text-sm text-[#292D32] py-4" href="#description">Description</a>
+              <a class="text-sm text-[#292D32] py-4" href="#faq">FAQ (0)</a>
+            </div>
+
+            <div id="specification">
+              <h3 class="text-[#92278F] text-xl font-medium mt-4 mb-2">Specification</h3>
+              <table class="min-w-full">
+                <thead>
+                  <tr>
+                    <th class="text-[#92278F] bg-[#92278F1A] text-sm py-3 px-4 rounded-xl font-medium text-left"
+                      colspan="2">
+                      Processor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b-1 border-[#E5E7EB]">
+                    <td class="py-4 px-0 lg:px-5 w-[30%]">Brand</td>
+                    <td class="py-4 px-0 lg:px-5 w-[70%]">Apple</td>
+                  </tr>
+                  <tr class="border-b-1 border-[#E5E7EB]">
+                    <td class="py-4 px-0 lg:px-5 w-[30%]">Model</td>
+                    <td class="py-4 px-0 lg:px-5 w-[70%]">Air 13" M1</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="min-w-full">
+                <thead>
+                  <tr>
+                    <th class="text-[#92278F] bg-[#92278F1A] text-sm py-3 px-4 rounded-xl font-medium text-left"
+                      colspan="2">
+                      Processor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b-1 border-[#E5E7EB]">
+                    <td class="py-4 px-0 lg:px-5 w-[30%]">Brand</td>
+                    <td class="py-4 px-0 lg:px-5 w-[70%]">Apple</td>
+                  </tr>
+                  <tr class="border-b-1 border-[#E5E7EB]">
+                    <td class="py-4 px-0 lg:px-5 w-[30%]">Model</td>
+                    <td class="py-4 px-0 lg:px-5 w-[70%]">Air 13" M1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="description" class="pl-4">
+              <h3 class="text-[#92278F] text-xl font-medium pt-8 pb-3 mb-4 border-b-2 border-[#D1D5DB]">Description</h3>
+              <div class="flex flex-col gap-3 pr-4">
+                <h4 class="text-2xl">MacBook Air 13" M1 Chip 8/256GB</h4>
+                <p class="text-base text-[#777777] font-light pb-6">The MacBook Air 13" M1 Chip 8/256GB is a powerful
+                  and
+                  sleek laptop
+                  from Apple that combines
+                  cutting-edge technology with
+                  portability.
+                  Designed to meet the needs of both professionals and casual users, this lightweight laptop delivers
+                  exceptional
+                  performance, stunning
+                  visuals, and all-day battery life, making it a perfect choice for everyday tasks, creative work, and
+                  entertainment.</p>
+
+                <h4 class="text-2xl">MacBook Air 13" M1 Chip 8/256GB</h4>
+                <p class="text-base text-[#777777] font-light pb-6">The MacBook Air 13" M1 Chip 8/256GB is a powerful
+                  and
+                  sleek laptop
+                  from Apple that combines
+                  cutting-edge technology with
+                  portability.
+                  Designed to meet the needs of both professionals and casual users, this lightweight laptop delivers
+                  exceptional
+                  performance, stunning
+                  visuals, and all-day battery life, making it a perfect choice for everyday tasks, creative work, and
+                  entertainment.</p>
+              </div>
+            </div>
+
+            <div class="pl-4">
+              <h3 class="text-[#92278F] text-xl font-medium pt-8 pb-3 mb-4 border-b-2 border-[#D1D5DB]">What is the
+                price of MacBook Air 13" M1 Chip in Bangladesh?</h3>
+              <p class="text-base text-[#777777] font-light pb-6">The latest price of MacBook Air 13" M1 Chip in
+                Bangladesh is BDT 89999. You can buy the MacBook Air 13" M1 Chip at best
+                price from our
+                website or visit any of our store .</p>
+              <p class="text-base text-[#777777] font-light pb-6">The latest price of MacBook Air 13" M1 Chip in
+                Bangladesh is BDT 89999. You can buy the MacBook Air 13" M1 Chip at best
+                price from our
+                website or visit any of our store .</p>
+            </div>
+
+            <div id="faq" class="pl-4">
+              <div class="flex justify-between items-center border-b-2 border-[#D1D5DB] mb-4">
+                <h3 class="text-[#92278F] text-xl font-medium pt-8 pb-3 mb-4">FAQ</h3>
+                <button class="text-[#92278F] bg-[#92278F1A] text-sm py-2 px-3 rounded-md font-medium text-left">Ask a
+                  Question</button>
+              </div>
+              <div class="flex flex-col gap-3 px-4">
+                <h4 class="text-2xl">FAQ (2)</h4>
+                <p class="text-base text-[#777777] font-light pb-6 border-b-2 border-[#D1D5DB]">Have question about this
+                  product? Get specific
+                  details about this product from expert.</p>
+              </div>
+              <div class="flex flex-col gap-2 px-4">
+                <p class="pl-12 text-xs font-medium text-[#90278E] py-2">Fazle Hasan Abed <span
+                    class="text-[#666666]">on
+                    13
+                    Feb 2025</span></p>
+
+                <h4 class="text-sm font-bold"><span class="font-bold pr-4">Q:</span> What is the coverage area of the
+                  Sharp FP-J30E-B Air Purifier?</h4>
+                <h4 class="pb-6 text-sm font-light border-b-2 border-[#D1D5DB]"><span class="font-bold pr-4">A:</span>
+                  The
+                  Sharp FP-J30E-B Air Purifier
+                  covers an area of up to 23 square meters.</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-span-3">
+            <h3 class="text-lg md:text-xl lg:text-2xl text-[#191A20] font-medium mt-4">
+              Similar Products
+            </h3>
+            <div
+              class=" mt-4 p-4 flex justify-center items-center gap-4 bg-transparent rounded-lg drop-shadow overflow-hidden w-full transform transition-transform border-gray-200 border">
+              <img class="aspect-square object-cover rounded-lg" src="./images/pppp1.png" alt="product image">
+              <div class="flex flex-col">
+                <h3 class="text-sm md:text-md font-light md:mb-2 uppercase text-gray-700 leading-4">
+                  Nike Air MX Super 2500 - Red
+                </h3>
+                <div class="flex gap-4">
+                  <div class="text-base font-medium text-[#4F2C70]">
+                    ৳449.00
+                  </div>
+                  <div class="text-sm text-gray-400 line-through">
+                    ৳ 699.00
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Product Details Part End -->
     </div>
   </section>
   <!-- Product Info Part End -->
+  <!-- External Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/easyzoom@2.5.2/dist/easyzoom.js'></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+
+    // Initialize EasyZoom
+    document.addEventListener('DOMContentLoaded', function () {
+      var easyzoom = EasyZoom(document.querySelectorAll('.easyzoom'));
+      easyzoom.on('error', function (e) {
+        console.error('Error loading image:', e);
+      });
+    });
+  </script>
 </body>
 
 </html>
