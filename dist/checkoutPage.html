@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="./tailwind.css" rel="stylesheet" />
+    <style>
+        input[type="radio"]+label span {
+            transition: background .2s,
+                transform .2s;
+        }
+
+        input[type="radio"]+label span:hover,
+        input[type="radio"]+label:hover span {
+            transform: scale(1.2);
+        }
+
+        input[type="radio"]:checked+label span {
+            background-color: #92278F;
+            box-shadow: 0px 0px 0px 2px white inset;
+        }
+    </style>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <section id="wishlist-page" class="bg-[#F9F9F7] h-full">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12 pt-6 gap-6">
+                <div class="col-span-8">
+                    <!-- Shopping Details Part Start -->
+                    <div class="bg-white py-4 px-6 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Shiping Details</h3>
+                            <a id="add-new-address-btn" href="#"
+                                class="flex justify-center items-center gap-2 text-sm mb-2 text-white bg-[#92278F] hover:bg-fuchsia-800 focus:ring-4 focus:outline-none focus:ring-fuchsia-300 font-medium px-5 py-2.5">
+                                <span>&#43;</span>
+                                <span>Add New Address</span>
+                            </a>
+                        </div>
+
+                        <!-- Empty Address -->
+                        <div id="empty-address"
+                            class="empty-image p-10 pb-0 flex flex-col gap-6 items-center justify-center">
+                            <img class="w-75" src="./images/emptyImage.png" alt="">
+                            <p>No address found</p>
+                        </div>
+
+                        <!-- Add New Address -->
+                        <div id="add-new-address-form" class="py-6 hidden">
+                            <form action="">
+                                <div class="mb-6">
+                                    <label for="name" class="block mb-2 font-medium text-gray-400 text-sm">Full Name
+                                        *</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your full name"
+                                        class="bg-[#F4F8F9] py-3 px-4 w-full rounded font-light">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="name" class="block mb-2 font-medium text-gray-400 text-sm">Phone
+                                        *</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your phone number"
+                                        class="bg-[#F4F8F9] py-3 px-4 w-full rounded font-light">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="name" class="block mb-2 font-medium text-gray-400 text-sm">Email</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your email address"
+                                        class="bg-[#F4F8F9] py-3 px-4 w-full rounded font-light">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="name" class="block mb-2 font-medium text-gray-400 text-sm">Shipping
+                                        Address*</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your address"
+                                        class="bg-[#F4F8F9] py-3 px-4 w-full rounded font-light">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="name" class="block mb-2 font-medium text-gray-400 text-sm">District
+                                        *</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your District"
+                                        class="bg-[#F4F8F9] py-3 px-4 w-full rounded font-light">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="name"
+                                        class="block mb-2 font-medium text-gray-400 text-sm">Thana*</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your Thana"
+                                        class="bg-[#F4F8F9] py-3 px-4 w-full rounded font-light">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="name" class="block mb-2 font-medium text-gray-400 text-sm">Postal Code
+                                        *</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your postal code"
+                                        class="bg-[#F4F8F9] py-3 px-4 w-full rounded font-light">
+                                </div>
+
+                                <div class=" flex gap-4 mt-12 justify-center items-center">
+                                    <button id="cancel-btn" type="button"
+                                        class="bg-transparent py-3 px-4 text-base text-[#92278F] rounded-lg border border-[#92278F]">
+                                        <span>Cancel</span>
+                                    </button>
+                                    <button
+                                        class="bg-[#92278F] py-3 px-4 text-base text-white rounded-lg border border-[#92278F]">
+                                        <span>Save this address</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Shopping Details Part End -->
+
+                    <!-- Payment Part Start -->
+                    <div class="bg-white py-4 px-6 rounded-lg mt-6">
+                        <div class="pb-2">
+                            <h3 class="text-lg font-bold">Shiping Details</h3>
+                        </div>
+
+                        <!-- Payment Selection -->
+                        <div class="flex flex-col gap-4 py-6">
+                            <div class="flex gap-4">
+                                <div>
+                                    <input id="radio1" type="radio" name="radio" class="hidden" checked />
+                                    <label for="radio1" class="flex items-center cursor-pointer">
+                                        <span
+                                            class="w-4 h-4 inline-block mr-1 rounded-full border border-grey text-[#292D32]"></span>
+                                        Online Payment</label>
+                                </div>
+                                <div>
+                                    <input id="radio2" type="radio" name="radio" class="hidden" />
+                                    <label for="radio2" class="flex items-center cursor-pointer">
+                                        <span
+                                            class="w-4 h-4 inline-block mr-1 rounded-full border border-grey text-[#292D32]"></span>
+                                        Cash on Delivery</label>
+                                </div>
+                            </div>
+
+                            <!-- payment Method -->
+                            <div id="payment-method" class="flex gap-4">
+                                <img class="rounded-lg w-60 p-2 border border-[#92278F]" src="./images/bikash.png"
+                                    alt="">
+                                <img class="rounded-lg w-60 p-2 border border-[#92278F]" src="./images/Nagad.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Payment Part End -->
+                </div>
+                <div class="col-span-4">
+                    <div class="bg-white py-4 px-6 rounded-lg">
+                        <h3 class="text-lg font-bold">Order Summary</h3>
+                        <div class="flex justify-between items-center">
+                            <img class="w-10" src="./images/cartProduct.jpeg" alt="">
+                            <p class="py-4  text-md font-medium text-[#292D32] w-60">MacBook Air 13" M1 Chip 8/256GB
+                                Space Gray</p>
+                            <span class="text-md text-[#292D32] w-30 text-right">BDT 89,999</span>
+                        </div>
+                        <div class="flex justify-between py-4">
+                            <div>
+                                <h4 class="text-md text-[#242424]">Subtotal</h4>
+                            </div>
+                            <div>
+                                <h4 class="text-md text-[#92278F]">BDT 89,999</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            // Function to toggle payment method visibility
+            function togglePaymentMethod() {
+                if ($('#radio1').is(':checked')) {
+                    $('#payment-method').show(); // Show payment method if Online Payment is selected
+                } else {
+                    $('#payment-method').hide(); // Hide payment method if Cash on Delivery is selected
+                }
+            }
+
+            // Initial check on page load
+            togglePaymentMethod();
+
+            // Add change event listeners to radio buttons
+            $('input[name="radio"]').change(function () {
+                togglePaymentMethod();
+            });
+
+            // Show Add New Address form and hide Empty Address section
+            $('#add-new-address-btn').click(function (e) {
+                e.preventDefault();
+                $('#empty-address').hide();
+                $('#add-new-address-form').removeClass('hidden');
+                $('#add-new-address-btn').hide();
+            });
+
+            // Revert to previous state when Cancel button is clicked
+            $('#cancel-btn').click(function () {
+                $('#empty-address').show();
+                $('#add-new-address-form').addClass('hidden');
+                $('#add-new-address-btn').show();
+            });
+        });
+    </script>
+</body>
+
+</html>
