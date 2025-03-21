@@ -8,67 +8,199 @@
     <link rel="stylesheet" href="./style.css">
     <link href="./tailwind.css" rel="stylesheet" />
     <style>
-        #wishlist-page .active {
+        #authentication-page .active {
             background: white;
             border-radius: 50px;
             color: #92278F;
+            transition: all 0.3s ease;
+        }
+
+        .form-container {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-container.hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        .form-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #slider {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
 
 <body>
-    <section id="wishlist-page" class="bg-[#F9F9F7] h-full p-12">
+    <section id="authentication-page" class="bg-[#F9F9F7] h-full p-3 lg:p-12">
         <div class="container mx-auto">
             <div class="flex justify-center items-center m-auto">
                 <div
-                    class="w-[930px] h-[550px] bg-white flex flex-col justify-center items-center m-auto gap-10 rounded-xl">
-                    <div class="bg-[#EDEDEDB2] border-2 border-[#EDEDEDB2] rounded-[50px]">
-                        <button class="active bg-transparent py-4 px-12">Login</button>
-                        <button class="bg-transparent py-4 px-12">Register</button>
+                    class="w-full lg:w-[930px] py-15 px-4 lg:px-0 bg-white flex flex-col justify-center items-center m-auto gap-10 rounded-xl">
+                    <!-- Selection -->
+                    <div class="bg-[#EDEDEDB2] border-2 border-[#EDEDEDB2] rounded-[50px] relative">
+                        <button id="login-btn" class="active bg-transparent py-4 px-12 z-50 relative">Login</button>
+                        <button id="register-btn" class="bg-transparent py-4 px-12 z-50 relative">Register</button>
+                        <div id="slider" class="absolute top-0 left-0 bg-white rounded-[50px] h-full z-10"></div>
                     </div>
 
                     <!-- Login Form -->
-                    <div class="w-lg">
-                        <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
-                            <label class="px-1 py-1 text-lg join-item text-pastelBlue">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="#ADB5BD" class="size-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                                </svg>
+                    <div id="login-form" class="w-full lg:w-lg form-container visible">
+                        <form action="">
+                            <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
+                                <label class="px-1 py-1 text-lg join-item text-pastelBlue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#ADB5BD" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                    </svg>
 
-                            </label>
-                            <input type="text" class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
-                                placeholder="Enter your name or phone number" />
-                        </div>
-                        <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
-                            <label class="px-1 py-1 text-lg join-item text-pastelBlue">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="#ADB5BD" class="size-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
-                                </svg>
-                            </label>
-                            <input type="password"
-                                class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
-                                placeholder="Password" />
-                        </div>
-                        <div class="mt-8">
-                            <button
-                                class="bg-[#92278F] py-3 px-4 w-full text-base text-white rounded-md border border-[#92278F]">
-                                <span>Login</span>
-                            </button>
-                        </div>
+                                </label>
+                                <input type="text"
+                                    class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
+                                    placeholder="Enter your name or phone number" />
+                            </div>
+                            <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
+                                <label class="px-1 py-1 text-lg join-item text-pastelBlue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#ADB5BD" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
+                                </label>
+                                <input type="password"
+                                    class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
+                                    placeholder="Password" />
+                            </div>
+                            <div class="mt-8">
+                                <button
+                                    class="bg-[#92278F] py-3 px-4 w-full text-base text-white rounded-md border border-[#92278F]">
+                                    <span>Login</span>
+                                </button>
+                            </div>
+                        </form>
                         <div class="flex justify-between items-center mt-3 px-2">
-                            <p class="text-sm font-semibold">Don't have account <span class="text-[#90278E]">Register
-                                    Here</span></p>
-                            <p class="text-xs font-semibold text-[#F50707]">Forgot Password</p>
+                            <p class="text-sm font-semibold">Don't have account <a href="#"
+                                    class="text-[#90278E]">Register
+                                    Here</a></p>
+                            <a href="./forgetPasswordPage.html" class="text-xs font-semibold text-[#F50707]">Forgot
+                                Password</a>
+                        </div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <div id="register-form" class="w-full lg:w-lg form-container hidden">
+                        <form action="">
+                            <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
+                                <label class="px-1 py-1 text-lg join-item text-pastelBlue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#ADB5BD" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                    </svg>
+
+                                </label>
+                                <input type="text"
+                                    class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
+                                    placeholder="Name" />
+                            </div>
+                            <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
+                                <label class="px-1 py-1 text-lg join-item text-pastelBlue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#ADB5BD" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                                    </svg>
+                                </label>
+                                <input type="email"
+                                    class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
+                                    placeholder="Email" />
+                            </div>
+                            <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
+                                <label class="px-1 py-1 text-lg join-item text-pastelBlue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#ADB5BD" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </label>
+                                <input type="text"
+                                    class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
+                                    placeholder="Phone" />
+                            </div>
+                            <div class="mt-5 join bg-primary border border-[#7A7A851A] p-2 flex items-center ">
+                                <label class="px-1 py-1 text-lg join-item text-pastelBlue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#ADB5BD" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
+                                </label>
+                                <input type="password"
+                                    class="px-3 py-2 w-full text-sm join-item outline-none bg-transparent"
+                                    placeholder="Password" />
+                            </div>
+                            <div class="mt-8">
+                                <button
+                                    class="bg-[#92278F] py-3 px-4 w-full text-base text-white rounded-md border border-[#92278F]">
+                                    <span>Register</span>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="flex justify-center items-center mt-5 px-2">
+                            <p class="text-sm font-semibold">Already have an account? <a href="#"
+                                    class="text-[#90278E]">Login Here</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Function to update slider position and width
+            function updateSlider(button) {
+                const $button = $(button);
+                const buttonWidth = $button.outerWidth(); // Get button width
+                const buttonOffset = $button.position().left; // Get button offset
+
+                // Update slider width and position
+                $('#slider').css({
+                    width: buttonWidth,
+                    transform: `translateX(${buttonOffset}px)`
+                });
+            }
+
+            // Initialize slider position and width for the active button
+            updateSlider($('#login-btn'));
+
+            // Login Button Click
+            $('#login-btn').click(function () {
+                $('#login-btn').addClass('active');
+                $('#register-btn').removeClass('active');
+                $('#login-form').removeClass('hidden').addClass('visible');
+                $('#register-form').removeClass('visible').addClass('hidden');
+                updateSlider(this); // Update slider position and width
+            });
+
+            // Register Button Click
+            $('#register-btn').click(function () {
+                $('#register-btn').addClass('active');
+                $('#login-btn').removeClass('active');
+                $('#register-form').removeClass('hidden').addClass('visible');
+                $('#login-form').removeClass('visible').addClass('hidden');
+                updateSlider(this); // Update slider position and width
+            });
+        });
+    </script>
 </body>
 
 </html>
