@@ -113,14 +113,14 @@
               </p>
             </div>
             <div class="flex items-center gap-4">
-              <div>
-                <button
-                  class="bg-[#E2E8F0] h-[30px] w-[30px] text-center leading-[1.2] inline-block text-[#718096] text-2xl rounded-lg">
+              <div class="flex items-center">
+                <button id="decrementBtn"
+                  class="bg-[#E2E8F0] h-[30px] w-[30px] text-center leading-[1.2] inline-block text-[#718096] text-2xl rounded-lg decrement-btn">
                   &#8722;
                 </button>
-                <span class="px-4 text-xl font-light">1</span>
-                <button
-                  class="bg-[#E2E8F0] h-[30px] w-[30px] text-center leading-[1.2] inline-block text-[#718096] text-2xl rounded-lg">
+                <span id="quantity" class="px-4 text-xl font-light block w-[50px] text-center">1</span>
+                <button id="incrementBtn"
+                  class="bg-[#E2E8F0] h-[30px] w-[30px] text-center leading-[1.2] inline-block text-[#718096] text-2xl rounded-lg increment-btn">
                   &#43;
                 </button>
               </div>
@@ -195,9 +195,9 @@
       </div>
 
       <!-- Product Details Part Start -->
-      <div>
+      <div class="mt-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="col-span-9">
+          <div class="col-span-12 lg:col-span-9">
             <div class="flex flex-row gap-6">
               <a class="text-sm text-[#292D32] py-4 pd_btn_active" href="#specification">Specification</a>
               <a class="text-sm text-[#292D32] py-4" href="#description">Description</a>
@@ -318,25 +318,46 @@
               </div>
             </div>
           </div>
-          <div class="col-span-3">
-            <h3 class="text-lg md:text-xl lg:text-2xl text-[#191A20] font-medium mt-4">
+          <div class="col-span-12 lg:col-span-3">
+            <h3 class="text-lg md:text-xl lg:text-2xl text-[#191A20] font-medium mt-3 mb-6">
               Similar Products
             </h3>
             <div
-              class=" mt-4 p-4 flex justify-center items-center gap-4 bg-transparent rounded-lg drop-shadow overflow-hidden w-full transform transition-transform border-gray-200 border">
-              <img class="aspect-square object-cover rounded-lg" src="./images/pppp1.png" alt="product image">
-              <div class="flex flex-col">
+              class="pl-0 flex items-center gap-4 bg-transparent w-full transform transition-transform border-gray-200 border">
+              <img class="rounded-lg h-full lg:h-auto w-25 bg-transparent" src="./images/cartProduct.jpeg"
+                alt="product image">
+              <div class="flex flex-col space-y-1.5 p-3 pl-0">
                 <h3 class="text-sm md:text-md font-light md:mb-2 uppercase text-gray-700 leading-4">
                   Nike Air MX Super 2500 - Red
                 </h3>
-                <div class="flex gap-4">
-                  <div class="text-base font-medium text-[#4F2C70]">
+                <div class="flex items-center gap-4">
+                  <div class="text-base font-semibold text-[#92278F]">
                     ৳449.00
                   </div>
-                  <div class="text-sm text-gray-400 line-through">
+                  <div class="text-xs text-gray-400 line-through">
                     ৳ 699.00
                   </div>
                 </div>
+                <p class="text-sm text-[#191A20CC] font-light">No Review Yet</p>
+              </div>
+            </div>
+            <div
+              class="pl-0 flex items-center gap-4 bg-transparent w-full transform transition-transform border-gray-200 border">
+              <img class="rounded-lg h-full lg:h-auto w-25 bg-transparent" src="./images/cartProduct.jpeg"
+                alt="product image">
+              <div class="flex flex-col space-y-1.5 p-3 pl-0">
+                <h3 class="text-sm md:text-md font-light md:mb-2 uppercase text-gray-700 leading-4">
+                  Nike Air MX Super 2500 - Red
+                </h3>
+                <div class="flex items-center gap-4">
+                  <div class="text-base font-semibold text-[#92278F]">
+                    ৳449.00
+                  </div>
+                  <div class="text-xs text-gray-400 line-through">
+                    ৳ 699.00
+                  </div>
+                </div>
+                <p class="text-sm text-[#191A20CC] font-light">No Review Yet</p>
               </div>
             </div>
           </div>
@@ -350,6 +371,41 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/easyzoom@2.5.2/dist/easyzoom.js'></script>
+  <script>
+    $(document).ready(function () {
+      let quantity = 1;
+
+      // Update the quantity display
+      function updateQuantity() {
+        $('#quantity').text(quantity);
+
+        // Toggle button states
+        if (quantity <= 0) {
+          quantity = 0;
+          $('.decrement-btn').addClass('opacity-50 cursor-not-allowed');
+        } else {
+          $('.decrement-btn').removeClass('opacity-50 cursor-not-allowed');
+        }
+      }
+
+      // Decrement button click handler
+      $('.decrement-btn').click(function () {
+        if (quantity > 0) {
+          quantity--;
+          updateQuantity();
+        }
+      });
+
+      // Increment button click handler
+      $('.increment-btn').click(function () {
+        quantity++;
+        updateQuantity();
+      });
+
+      // Initialize button state
+      updateQuantity();
+    });
+  </script>
   <script>
     var swiper = new Swiper(".mySwiper", {
       direction: "vertical",
