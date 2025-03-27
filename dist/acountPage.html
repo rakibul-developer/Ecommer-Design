@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="./tailwind.css" rel="stylesheet" />
+    <style>
+        #account-page .active.tab {
+            background: #EEEDED;
+        }
+
+        #account-page .active svg {
+            background: #90278E;
+            stroke: white;
+        }
+
+        #account-page .my-order .active {
+            background: #92278F;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="account-page" class="bg-[#F9F9F7] h-full p-3 lg:p-12">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12 gap-3">
+                <div class="col-span-2 border border-gray-200">
+                    <div class="flex flex-col justify-between h-80">
+                        <div>
+                            <div class="active tab flex items-center gap-3 px-2 py-1 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="black" class="size-8 h-9 w-9 p-2 rounded-full">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                </svg>
+                                <h3 class="text-xs font-semibold text-[#36454F]">
+                                    Account Info
+                                </h3>
+                            </div>
+                            <div class="tab flex items-center gap-3 px-2 py-1 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="black"
+                                    class="size-8 h-9 w-9 p-2 rounded-full bg-[#EDEDED]">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
+                                </svg>
+                                <h3 class="text-xs font-semibold text-[#36454F]">
+                                    My Orders
+                                </h3>
+                            </div>
+                            <div class="tab flex items-center gap-3 px-2 py-1 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="black"
+                                    class="size-8 h-9 w-9 p-2 rounded-full bg-[#EDEDED]">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+                                </svg>
+                                <h3 class="text-xs font-semibold text-[#36454F]">
+                                    Manage Address
+                                </h3>
+                            </div>
+                            <div class="tab flex items-center gap-3 px-2 py-1 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="black"
+                                    class="size-8 h-9 w-9 p-2 rounded-full bg-[#EDEDED]">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                                </svg>
+                                <h3 class="text-xs font-semibold text-[#36454F]">
+                                    FAQ
+                                </h3>
+                            </div>
+                        </div>
+                        <h3 class="text-[#36454F] text-xs font-semibold p-3">Logout</h3>
+                    </div>
+                </div>
+                <div class="col-span-10">
+                    <!-- Account Info Part -->
+                    <div class="flex flex-col gap-4">
+                        <!-- Account Details -->
+                        <div class="border border-gray-200 px-8 pt-6">
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                                <h3 class="text-base font-semibold">
+                                    Account Details
+                                </h3>
+                                <button class="border border-[#92278F] rounded-md px-3 py-2 flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#92278F" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                    </svg>
+                                    <span class="text-xs text-[#92278F] font-medium">Edit</span>
+                                </button>
+                            </div>
+                            <form action="">
+                                <div class="grid grid-cols-12 gap-3 py-4">
+                                    <div class="col-span-6">
+                                        <div class="mb-6">
+                                            <label for="name"
+                                                class="block mb-2 font-semibold text-[#718096CC] text-xs">Full
+                                                Name</label>
+                                            <input type="text" id="name" name="name" placeholder="Rakib"
+                                                class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
+                                        </div>
+                                        <div class="mb-6">
+                                            <label for="name"
+                                                class="block mb-2 font-semibold text-[#718096CC] text-xs">Email</label>
+                                            <input type="email" id="name" name="name"
+                                                placeholder="rakibprodan1395@gmail.com"
+                                                class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-6">
+                                        <div class="mb-6">
+                                            <label for="name"
+                                                class="block mb-2 font-semibold text-[#718096CC] text-xs">Phone
+                                                Number</label>
+                                            <input type="text" id="name" name="name" placeholder="+8801830612195"
+                                                class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
+                                        </div>
+                                        <div class="mb-6">
+                                            <label for="name"
+                                                class="block mb-2 font-semibold text-[#718096CC] text-xs">Email</label>
+                                            <select id="gender"
+                                                class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
+                                                <option disabled selected>Choose a Gender</option>
+                                                <option value="m">Male</option>
+                                                <option value="f">Female</option>
+                                                <option value="o">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Security -->
+                        <div class="border border-gray-200 px-8 pt-6">
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                                <h3 class="text-base font-semibold">
+                                    Security
+                                </h3>
+                                <button class="border border-[#92278F] rounded-md px-3 py-2 flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#92278F" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                    </svg>
+                                    <span class="text-xs text-[#92278F] font-medium">Edit</span>
+                                </button>
+                            </div>
+                            <form action="">
+                                <div class="grid grid-cols-12 gap-3 py-4">
+                                    <div class="col-span-6">
+                                        <div class="mb-6">
+                                            <label for="name"
+                                                class="block mb-2 font-semibold text-[#718096CC] text-xs">Curent
+                                                Password</label>
+                                            <input type="password" id="name" name="name"
+                                                placeholder="Enter current password"
+                                                class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-6">
+                                        <div class="mb-6">
+                                            <label for="name"
+                                                class="block mb-2 font-semibold text-[#718096CC] text-xs">New
+                                                Password</label>
+                                            <input type="password" id="name" name="name"
+                                                placeholder="Enter your new password"
+                                                class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- My Order Part -->
+                    <div class="my-order flex flex-col gap-6">
+                        <div class="flex items-center gap-3">
+                            <img class="rounded-full" src="./images/cartProduct.jpeg" height="60" width="60" alt="">
+                            <h3 class="text-base font-semibold">Hello Rakib</h3>
+                        </div>
+                        <div class="grid grid-cols-4">
+                            <div class="col-span-1">
+                                <div
+                                    class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                    <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
+                                    <p class="text-base font-medium text-[#292D32]">Total Orders</p>
+                                </div>
+                            </div>
+                            <div class="col-span-1">
+                                <div
+                                    class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                    <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
+                                    <p class="text-base font-medium text-[#292D32]">New Orders</p>
+                                </div>
+                            </div>
+                            <div class="col-span-1">
+                                <div
+                                    class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                    <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
+                                    <p class="text-base font-medium text-[#292D32]">
+                                        Wish list
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#292D32" class="size-5 inline-block">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-span-1">
+                                <div
+                                    class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                    <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
+                                    <p class="text-base font-medium text-[#292D32]">
+                                        Cart
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="#292D32" class="size-5 inline-block">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold">Recent Order List</h3>
+                        <div class="flex items-center gap-4">
+                            <button
+                                class="active col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                New
+                            </button>
+                            <button
+                                class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                Delivered
+                            </button>
+                            <button
+                                class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                Cancelled
+                            </button>
+                            <button
+                                class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                Returned
+                            </button>
+                        </div>
+                        <table class="w-full table-fixed">
+                            <thead>
+                                <tr class="border-b-2 border-gray-200 bg-gray-200 lg:bg-white">
+                                    <th
+                                        class="text-sm lg:text-lg w-1/4 lg:w-1/18 py-4 px-6 text-left text-gray-600 font-bold uppercase  hidden lg:table-cell">
+                                    </th>
+                                    <th
+                                        class="text-sm lg:text-lg w-1/4 lg:w-1/15 py-4 px-6 text-center  hidden lg:table-cell">
+                                    </th>
+                                    <th
+                                        class="text-sm lg:text-lg w-1/4 lg:w-1/3 py-4 px-6 text-left text-gray-600 font-bold uppercase">
+                                        product</th>
+                                    <th
+                                        class="text-sm lg:text-lg w-1/4 lg:w-1/7 py-4 px-6 text-left text-gray-600 font-bold uppercase hidden lg:table-cell">
+                                        price</th>
+                                    <th
+                                        class="text-sm lg:text-lg w-1/4 lg:w-1/8 py-4 px-6 text-left text-gray-600 font-bold uppercase">
+                                        quantity
+                                    </th>
+                                    <th
+                                        class="text-sm lg:text-lg w-1/4 lg:w-1/8 py-4 px-6 text-left text-gray-600 font-bold uppercase">
+                                        subtotal
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white">
+                                <tr>
+                                    <td class="py-4 px-6 border-b border-gray-200 hidden lg:table-cell">
+                                        <button>&#x2715;</button>
+                                    </td>
+                                    <td class="py-1 border-b border-gray-200 hidden lg:table-cell">
+                                        <img class="m-auto !max-w-[50px]" src="./images/cartProduct.jpeg" alt="">
+                                    </td>
+                                    <td class="py-4 px-6 border-b border-gray-200 text-md lg:text-lg">MacBook Air 13" M1
+                                        Chip 8/256GB Space
+                                        Gray</td>
+                                    <td class="py-4 px-6 border-b border-gray-200 hidden lg:table-cell">
+                                        <p class="text-base text-[#92278F] font-medium">BDT 89,999</p>
+                                    </td>
+                                    <td class="py-4 px-6 border-b border-gray-200">
+                                        <form
+                                            class="mx-auto text-center border border-gray-200 h-[42px] rounded-lg w-23 flex">
+                                            <div id="decrease"
+                                                class="value-button inline-block text-[#777777] w-8 h-10 text-center align-middle select-none hover:cursor-pointer leading-[2.3]">
+                                                &#8722;</div>
+                                            <input type="text" id="number" value="0"
+                                                class="text-center border-r border-l border-gray-200 w-8 h-10 text-[#777777]" />
+                                            <div id="increase"
+                                                class="value-button inline-block text-[#777777] w-8 h-10 text-center align-middle select-none hover:cursor-pointer leading-[2.3]">
+                                                &#43;</div>
+                                        </form>
+                                    </td>
+                                    <td class="py-4 px-6 border-b border-gray-200">
+                                        <p class="text-base text-[#92278F] font-medium">BDT 89,999</p>
+                                    </td>
+                                </tr>
+                                <!-- Add more rows here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#increase').click(function () {
+                var value = parseInt($('#number').val(), 10);
+                value = isNaN(value) ? 0 : value;
+                value++;
+                $('#number').val(value);
+            });
+
+            $('#decrease').click(function () {
+                var value = parseInt($('#number').val(), 10);
+                value = isNaN(value) ? 0 : value;
+                value < 1 ? value = 1 : '';
+                value--;
+                $('#number').val(value);
+            });
+        });
+    </script>
+</body>
+
+</html>
