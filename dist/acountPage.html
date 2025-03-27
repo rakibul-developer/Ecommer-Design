@@ -12,7 +12,7 @@
             background: #EEEDED;
         }
 
-        #account-page .active svg {
+        #account-page .tab.active svg {
             background: #90278E;
             stroke: white;
         }
@@ -21,6 +21,46 @@
             background: #92278F;
             color: white;
         }
+
+        @media (max-width: 1023px) {
+
+            /* lg:block breakpoint */
+            .tab {
+                border: 1px solid #92278F;
+                border-radius: 5px;
+            }
+
+            .tab.active {
+                background-color: #92278F !important;
+                /* Dark background for mobile */
+                border-radius: 0.5rem;
+                /* rounded-lg equivalent */
+            }
+
+            .tab h3 {
+                color: #90278E;
+            }
+
+            .tab.active h3 {
+                color: white !important;
+                /* Force white text */
+            }
+
+            .tab svg {
+                background: transparent;
+                width: 40px;
+                stroke: #92278F;
+            }
+
+            .tab.active svg {
+                background-color: none !important;
+                padding: 0;
+                width: 25px;
+                /* Match tab bg */
+                stroke: white !important;
+                /* White icon */
+            }
+        }
     </style>
 </head>
 
@@ -28,49 +68,58 @@
     <section id="account-page" class="bg-[#F9F9F7] h-full p-3 lg:p-12">
         <div class="container mx-auto">
             <div class="grid grid-cols-12 gap-3">
-                <div class="col-span-2">
-                    <div class="flex flex-col justify-between h-80 border border-gray-200">
-                        <div>
-                            <div class="tab active flex items-center gap-3 px-2 py-1 mb-4" data-tab="account-info">
+                <div class="col-span-12 lg:col-span-2">
+                    <div class="flex flex-col justify-between h-auto lg:h-80 lg:border border-gray-200">
+                        <div class="grid grid-cols-2 gap-3 lg:block">
+                            <div class="tab active flex items-center gap-2 lg:gap-3 px-2 py-1 lg:mb-4 h-[88px] lg:h-auto justify-center lg:justify-start"
+                                data-tab="account-info">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="black" class="size-8 h-9 w-9 p-2 rounded-full">
+                                    stroke-width="1.5" stroke="black"
+                                    class="h-auto lg:h-9 w-auto lg:w-9 p-2 rounded-full">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                                 </svg>
-                                <h3 class="text-xs font-semibold text-[#36454F]">Account Info</h3>
+                                <h3 class="text-sm lg:text-xs font-medium lg:font-semibold lg:text-[#36454F]">Account
+                                    Info
+                                </h3>
                             </div>
-                            <div class="tab flex items-center gap-3 px-2 py-1 mb-4" data-tab="my-orders">
+                            <div class="tab flex items-center gap-2 lg:gap-3 px-2 py-1 lg:mb-4 h-[88px] lg:h-auto justify-center lg:justify-start"
+                                data-tab="my-orders">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="black"
-                                    class="size-8 h-9 w-9 p-2 rounded-full bg-[#EDEDED]">
+                                    class="h-auto lg:h-9 w-auto lg:w-9 p-2 rounded-full bg-[#EDEDED]">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
                                 </svg>
-                                <h3 class="text-xs font-semibold text-[#36454F]">My Orders</h3>
+                                <h3 class="text-sm lg:text-xs font-medium lg:font-semibold text-[#36454F]">My Orders
+                                </h3>
                             </div>
-                            <div class="tab flex items-center gap-3 px-2 py-1 mb-4" data-tab="manage-address">
+                            <div class="tab flex items-center gap-2 lg:gap-3 px-2 py-1 lg:mb-4 h-[88px] lg:h-auto justify-center lg:justify-start"
+                                data-tab="manage-address">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="black"
-                                    class="size-8 h-9 w-9 p-2 rounded-full bg-[#EDEDED]">
+                                    class="h-auto lg:h-9 w-auto lg:w-9 p-2 rounded-full bg-[#EDEDED]">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
                                 </svg>
-                                <h3 class="text-xs font-semibold text-[#36454F]">Manage Address</h3>
+                                <h3 class="text-sm lg:text-xs font-medium lg:font-semibold text-[#36454F]">Manage
+                                    Address</h3>
                             </div>
-                            <div class="tab flex items-center gap-3 px-2 py-1 mb-4" data-tab="faq">
+                            <div class="tab flex items-center gap-2 lg:gap-3 px-2 py-1 lg:mb-4 h-[88px] lg:h-auto justify-center lg:justify-start"
+                                data-tab="faq">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="black"
-                                    class="size-8 h-9 w-9 p-2 rounded-full bg-[#EDEDED]">
+                                    class="h-auto lg:h-9 w-auto lg:w-9 p-2 rounded-full bg-[#EDEDED]">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
                                 </svg>
-                                <h3 class="text-xs font-semibold text-[#36454F]">FAQ</h3>
+                                <h3 class="text-sm lg:text-xs font-medium lg:font-semibold text-[#36454F]">FAQ</h3>
                             </div>
                         </div>
-                        <h3 class="text-[#36454F] text-xs font-semibold p-3">Logout</h3>
+                        <h3 class="hidden lg:block text-[#36454F] text-xs font-semibold p-3">Logout</h3>
                     </div>
                 </div>
-                <div class="col-span-10">
+                <div class="col-span-12 lg:col-span-10">
                     <!-- Account Info Part -->
                     <div id="account-info" class="tab-content active">
                         <div class="flex flex-col gap-4">
@@ -182,24 +231,24 @@
                                 <img class="rounded-full" src="./images/cartProduct.jpeg" height="60" width="60" alt="">
                                 <h3 class="text-base font-semibold">Hello Rakib</h3>
                             </div>
-                            <div class="grid grid-cols-4">
+                            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
                                 <div class="col-span-1">
                                     <div
-                                        class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                        class="bg-[#EEF0F7] h-[120px] w-auto lg:w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
                                         <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
                                         <p class="text-base font-medium text-[#292D32]">Total Orders</p>
                                     </div>
                                 </div>
                                 <div class="col-span-1">
                                     <div
-                                        class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                        class="bg-[#EEF0F7] h-[120px] w-auto lg:w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
                                         <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
                                         <p class="text-base font-medium text-[#292D32]">New Orders</p>
                                     </div>
                                 </div>
                                 <div class="col-span-1">
                                     <div
-                                        class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                        class="bg-[#EEF0F7] h-[120px] w-auto lg:w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
                                         <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
                                         <p class="text-base font-medium text-[#292D32]">
                                             Wish list
@@ -213,7 +262,7 @@
                                 </div>
                                 <div class="col-span-1">
                                     <div
-                                        class="bg-[#EEF0F7] h-[120px] w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
+                                        class="bg-[#EEF0F7] h-[120px] w-auto lg:w-[245px] rounded-lg flex flex-col justify-center items-center gap-2">
                                         <h3 class="text-3xl font-bold text-[#292D32]">00</h3>
                                         <p class="text-base font-medium text-[#292D32]">
                                             Cart
@@ -227,21 +276,21 @@
                                 </div>
                             </div>
                             <h3 class="text-lg font-semibold">Recent Order List</h3>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3 lg:gap-4">
                                 <button
-                                    class="active col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                    class="active col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-2.5 lg:py-3 px-6 lg:px-10 text-[#36454F] text-xs lg:text-base font-medium rounded-lg">
                                     New
                                 </button>
                                 <button
-                                    class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                    class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-2.5 lg:py-3 px-6 lg:px-10 text-[#36454F] text-xs lg:text-base font-medium rounded-lg">
                                     Delivered
                                 </button>
                                 <button
-                                    class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                    class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-2.5 lg:py-3 px-6 lg:px-10 text-[#36454F] text-xs lg:text-base font-medium rounded-lg">
                                     Cancelled
                                 </button>
                                 <button
-                                    class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-3 px-10 text-[#36454F] text-base font-medium rounded-lg">
+                                    class="col-span-2 lg:col-span-1 flex gap-2 items-center bg-[#36454F1A] py-2.5 lg:py-3 px-6 lg:px-10 text-[#36454F] text-xs lg:text-base font-medium rounded-lg">
                                     Returned
                                 </button>
                             </div>
@@ -258,7 +307,7 @@
                                             class="text-sm lg:text-lg w-1/4 lg:w-1/3 py-4 px-6 text-left text-gray-600 font-bold uppercase">
                                             product</th>
                                         <th
-                                            class="text-sm lg:text-lg w-1/4 lg:w-1/7 py-4 px-6 text-left text-gray-600 font-bold uppercase hidden lg:table-cell">
+                                            class="text-sm lg:text-lg w-1/4 lg:w-1/7 py-4 px-6 text-left text-gray-600 font-bold uppercase">
                                             price</th>
                                         <th
                                             class="text-sm lg:text-lg w-1/4 lg:w-1/8 py-4 px-6 text-left text-gray-600 font-bold uppercase">
@@ -278,28 +327,30 @@
                                         <td class="py-1 border-b border-gray-200 hidden lg:table-cell">
                                             <img class="m-auto !max-w-[50px]" src="./images/cartProduct.jpeg" alt="">
                                         </td>
-                                        <td class="py-4 px-6 border-b border-gray-200 text-md lg:text-lg">MacBook Air
+                                        <td class="py-4 px-6 border-b border-gray-200 text-xs lg:text-lg">MacBook Air
                                             13" M1
                                             Chip 8/256GB Space
                                             Gray</td>
-                                        <td class="py-4 px-6 border-b border-gray-200 hidden lg:table-cell">
-                                            <p class="text-base text-[#92278F] font-medium">BDT 89,999</p>
+                                        <td class="py-4 px-6 border-b border-gray-200">
+                                            <p class="text-sm lg:text-base text-[#92278F] font-medium">BDT 89,999</p>
                                         </td>
                                         <td class="py-4 px-6 border-b border-gray-200">
                                             <form
-                                                class="mx-auto text-center border border-gray-200 h-[42px] rounded-lg w-23 flex">
+                                                class="mx-auto text-center border border-gray-200 h-[33px] lg:h-[42px] rounded-lg w-15 lg:w-23 flex items-center justify-center">
                                                 <div id="decrease"
-                                                    class="value-button inline-block text-[#777777] w-8 h-10 text-center align-middle select-none hover:cursor-pointer leading-[2.3]">
+                                                    class="value-button inline-block text-[#777777] w-5 lg:w-8 h-8 lg:h-10 text-center align-middle select-none hover:cursor-pointer leading-[2.3]">
                                                     &#8722;</div>
                                                 <input type="text" id="number" value="0"
-                                                    class="text-center border-r border-l border-gray-200 w-8 h-10 text-[#777777]" />
+                                                    class="text-center border-r border-l border-gray-200 w-5 lg:w-8 h-8 lg:h-10 text-sm lg:text-md text-[#777777]" />
                                                 <div id="increase"
-                                                    class="value-button inline-block text-[#777777] w-8 h-10 text-center align-middle select-none hover:cursor-pointer leading-[2.3]">
+                                                    class="value-button inline-block text-[#777777] w-5 lg:w-8 h-8 lg:h-10 text-center align-middle select-none hover:cursor-pointer leading-[2.3]">
                                                     &#43;</div>
                                             </form>
                                         </td>
                                         <td class="py-4 px-6 border-b border-gray-200">
-                                            <p class="text-base text-[#92278F] font-medium">BDT 89,999</p>
+                                            <p
+                                                class="text-sm lg:text-base text-[#92278F] text-center lg:text-left font-medium">
+                                                BDT 89,999</p>
                                         </td>
                                     </tr>
                                     <!-- Add more rows here -->
@@ -318,13 +369,13 @@
                             </div>
                             <form action="">
                                 <div class="grid grid-cols-12 gap-8 py-4">
-                                    <div class="col-span-6">
+                                    <div class="col-span-12 lg:col-span-6">
                                         <label for="name" class="block mb-2 font-semibold text-[#718096CC] text-xs">Full
                                             Name *</label>
                                         <input type="text" id="name" name="name" placeholder="Rakib"
                                             class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
                                     </div>
-                                    <div class="col-span-6">
+                                    <div class="col-span-12 lg:col-span-6">
                                         <label for="name"
                                             class="block mb-2 font-semibold text-[#718096CC] text-xs">Shipping
                                             Address
@@ -332,34 +383,34 @@
                                         <input type="text" id="name" name="name" placeholder="Enter your address"
                                             class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
                                     </div>
-                                    <div class="col-span-6">
+                                    <div class="col-span-12 lg:col-span-6">
                                         <label for="name"
                                             class="block mb-2 font-semibold text-[#718096CC] text-xs">Phone
                                             *</label>
                                         <input type="text" id="name" name="name" placeholder="Enter your phone number"
                                             class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
                                     </div>
-                                    <div class="col-span-6">
+                                    <div class="col-span-12 lg:col-span-6">
                                         <label for="name"
                                             class="block mb-2 font-semibold text-[#718096CC] text-xs">Thana
                                             *</label>
                                         <input type="text" id="name" name="name" placeholder="Enter your thana"
                                             class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
                                     </div>
-                                    <div class="col-span-6">
+                                    <div class="col-span-12 lg:col-span-6">
                                         <label for="name"
                                             class="block mb-2 font-semibold text-[#718096CC] text-xs">Email</label>
                                         <input type="email" id="name" name="name" placeholder="Enter your email address"
                                             class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
                                     </div>
-                                    <div class="col-span-6">
+                                    <div class="col-span-12 lg:col-span-6">
                                         <label for="name"
                                             class="block mb-2 font-semibold text-[#718096CC] text-xs">Postal
                                             Code</label>
                                         <input type="text" id="name" name="name" placeholder="Enter your postal code"
                                             class="bg-[#EEF2F6] py-3 px-4 w-full rounded font-light">
                                     </div>
-                                    <div class="col-span-6">
+                                    <div class="col-span-12 lg:col-span-6">
                                         <label for="name"
                                             class="block mb-2 font-semibold text-[#718096CC] text-xs">District
                                             *</label>
@@ -383,7 +434,7 @@
 
                     <!-- FAQ part -->
                     <div id="faq" class="tab-content">
-                        <div class="shadow-md px-8 pt-6 bg-whiterounded-lg">
+                        <div class="shadow-md px-4 lg:px-8 pt-2 lg:pt-6 bg-whiterounded-lg rounded-md">
                             <form action="">
                                 <div class="grid grid-cols-12 gap-8 py-4">
                                     <div class="col-span-12">
@@ -419,48 +470,43 @@
                         </div>
                     </div>
                 </div>
-                <div id="faq" class="tab-content">
-                    <div class="faq col-span-12">
-                        <!-- https://www.kookai.com.au/pages/faq -->
-                        <div class="accordion bg-white shadow-md px-10 py-6 rounded-lg">
-                            <div class="pb-3">
-                                <h3 class="text-lg font-semibold">
-                                    Asked Question
-                                </h3>
-                            </div>
-                            <div class="accordion-section">
-                                <a href="#accordion-1"
-                                    class="accordion-section-title text-sm font-bold text-[#767676] pt-5 pb-4 border-b border-gray-200 inline-block w-full"><span
-                                        class="pr-6">Q:</span>What is
-                                    the coverage area of the sharp FP-j30E-B Air Purifier?</a>
+                <div id="faq-accordion" class="faq col-span-12">
+                    <div class="accordion bg-white shadow-md px-4 lg:px-10 py-2 lg:py-6 mt-8 rounded-lg">
+                        <div class="pb-3">
+                            <h3 class="text-lg font-semibold">Asked Question</h3>
+                        </div>
+                        <div class="accordion-section">
+                            <a href="#accordion-1"
+                                class="accordion-section-title text-sm font-bold text-[#767676] pt-5 pb-4 border-b border-gray-200 inline-block w-full"><span
+                                    class="pr-6">Q:</span>What is
+                                the coverage area of the sharp FP-j30E-B Air Purifier?</a>
 
-                                <div id="accordion-1" class="accordion-section-content" style="display: none;">
-                                    <p class="text-sm font-bold text-[#767676] p-4">Should you wish to change your order
-                                        after
-                                        your payment has been processed, please
-                                        call us immediately on
-                                        +613 8290 0599 and we will try our best to accommodate your request.&nbsp; There
-                                        may
-                                        be some instances
-                                        where we are unable to modify your order.</p>
-                                </div>
+                            <div id="accordion-1" class="accordion-section-content" style="display: none;">
+                                <p class="text-sm font-bold text-[#767676] p-4">Should you wish to change your order
+                                    after
+                                    your payment has been processed, please
+                                    call us immediately on
+                                    +613 8290 0599 and we will try our best to accommodate your request.&nbsp; There
+                                    may
+                                    be some instances
+                                    where we are unable to modify your order.</p>
                             </div>
-                            <div class="accordion-section">
-                                <a href="#accordion-2"
-                                    class="accordion-section-title text-sm font-bold text-[#767676] pt-5 pb-4 border-b border-gray-200 inline-block w-full"><span
-                                        class="pr-6">Q:</span>What is
-                                    the coverage area of the sharp FP-j30E-B Air Purifier?</a>
+                        </div>
+                        <div class="accordion-section">
+                            <a href="#accordion-2"
+                                class="accordion-section-title text-sm font-bold text-[#767676] pt-5 pb-4 border-b border-gray-200 inline-block w-full"><span
+                                    class="pr-6">Q:</span>What is
+                                the coverage area of the sharp FP-j30E-B Air Purifier?</a>
 
-                                <div id="accordion-2" class="accordion-section-content" style="display: none;">
-                                    <p class="text-sm font-bold text-[#767676] p-4">Should you wish to change your order
-                                        after
-                                        your payment has been processed, please
-                                        call us immediately on
-                                        +613 8290 0599 and we will try our best to accommodate your request.&nbsp; There
-                                        may
-                                        be some instances
-                                        where we are unable to modify your order.</p>
-                                </div>
+                            <div id="accordion-2" class="accordion-section-content" style="display: none;">
+                                <p class="text-sm font-bold text-[#767676] p-4">Should you wish to change your order
+                                    after
+                                    your payment has been processed, please
+                                    call us immediately on
+                                    +613 8290 0599 and we will try our best to accommodate your request.&nbsp; There
+                                    may
+                                    be some instances
+                                    where we are unable to modify your order.</p>
                             </div>
                         </div>
                     </div>
@@ -519,21 +565,31 @@
 
     <script>
         $(document).ready(function () {
-            // Initialize tabs - show only the active content
+            // Initialize - show only active tab content
             $('.tab-content').not('.active').hide();
+            $('#faq-accordion').hide(); // Hide FAQ accordion initially
 
             // Tab click handler
             $('.tab').click(function () {
-                // Remove active class from all tabs and content
+                // Remove active class from all tabs
                 $('.tab').removeClass('active');
-                $('.tab-content').removeClass('active').hide();
 
                 // Add active class to clicked tab
                 $(this).addClass('active');
 
+                // Hide all tab content
+                $('.tab-content').removeClass('active').hide();
+
                 // Show corresponding content
                 var tabId = $(this).data('tab');
                 $('#' + tabId).addClass('active').show();
+
+                // Handle FAQ accordion visibility
+                if (tabId === 'faq') {
+                    $('#faq-accordion').show();
+                } else {
+                    $('#faq-accordion').hide();
+                }
             });
         });
     </script>
